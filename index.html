@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AL RAEES TRAVEL AGENCY | Airline Ticket Booking & Luxury World Travel</title>
+  <meta name="description" content="Alraees Travel Agency - Book smarter and travel further. Curated luxury flights, 5-star hotel accommodations, and bespoke global journeys.">
+  <meta name="keywords" content="Alraees travel agency, luxury airline tickets, flight booking, 5 star hotel suite, luxury resort, private penthouse, Dubai travel, London tours">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230284c7'><path d='M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z'/></svg>" type="image/svg+xml">
+
+  <!-- Clean, Professional Luxury Font Pairing: Plus Jakarta Sans + Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core & Animation Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       Main Hero Container with Embedded Top Navigation
+       ========================================================================= -->
+  <section class="hero-section" id="hero">
+    
+    <!-- Parallax Cloudy Background Layer (Zooms Out on Scroll) -->
+    <div class="hero-cloud-bg-wrap">
+      <img src="assets/images/cloud-bg.jpg" alt="Sky Clouds Background" class="hero-cloud-bg" id="heroCloudBg">
+      <div class="hero-cloud-overlay"></div>
+    </div>
+
+    <!-- Top Page Header Bar (Embedded directly at the top of the page in document flow) -->
+    <div class="container top-header-container">
+      <div class="top-page-header" id="topPageHeader">
+        <!-- Brand Logo: AL RAEES TRAVEL AGENCY -->
+        <a href="#hero" class="brand-logo" id="logoLink" aria-label="Alraees Travel Agency">
+          <div class="brand-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="10" fill="#0f172a"/>
+              <path d="M16 4L26 10L26 22L16 28L6 22L6 10L16 4Z" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M16 9L21 12.5V19.5L16 23L11 19.5V12.5L16 9Z" fill="#0284c7"/>
+              <path d="M8 16H24" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">AL RAEES</span>
+            <span class="brand-sub">TRAVEL AGENCY</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links: Strict 6 Pages (Home, Hotels, Packages, About, Reviews, Contacts) -->
+        <nav class="nav-menu-wrap" aria-label="Main Navigation">
+          <ul class="nav-menu">
+            <li><a href="#hero" class="nav-link active">Home</a></li>
+            <li><a href="#luxuryStays" class="nav-link">Hotels</a></li>
+            <li><a href="#exclusiveDeals" class="nav-link">Packages</a></li>
+            <li><a href="#aboutUs" class="nav-link">About</a></li>
+            <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+            <li><a href="#siteFooter" class="nav-link">Contacts</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right Header Actions (Locked-Alignment Search & Dynamic User Auth) -->
+        <div class="header-actions">
+          <div class="search-pill-box" role="search">
+            <input type="text" id="globalSearchInput" placeholder="Search hotels, trips..." aria-label="Search destination">
+            <button type="button" class="search-btn" id="btnHeaderSearch" aria-label="Search">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Dynamic User Auth Container (LocalStorage Powered: Sign Up or Profile Pill) -->
+          <div class="user-auth-wrap" id="userAuthContainer">
+            <button type="button" class="btn-signup-pill" id="btnSignUp">
+              <span>Sign up</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Mobile Hamburger Button -->
+          <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Mobile Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer & Backdrop: Strict 6 Pages -->
+    <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <div class="mobile-drawer-header">
+        <div class="brand-text">
+          <span class="brand-title">AL RAEES</span>
+          <span class="brand-sub">TRAVEL AGENCY</span>
+        </div>
+        <button type="button" class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
+      </div>
+      <div class="mobile-drawer-search">
+        <input type="text" id="mobileSearchInput" placeholder="Search hotels or packages...">
+        <button type="button" id="btnMobileSearch" style="color: #0284c7; font-weight: bold;">Go</button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="#hero" class="mobile-nav-link active">🏠 Home</a></li>
+        <li><a href="#luxuryStays" class="mobile-nav-link">🏨 Hotels & Suites</a></li>
+        <li><a href="#exclusiveDeals" class="mobile-nav-link">🎁 Packages</a></li>
+        <li><a href="#aboutUs" class="mobile-nav-link">ℹ️ About</a></li>
+        <li><a href="#testimonials" class="mobile-nav-link">⭐ Reviews</a></li>
+        <li><a href="#siteFooter" class="mobile-nav-link">📞 Contacts</a></li>
+      </ul>
+      <div class="mobile-drawer-footer" id="mobileDrawerAuthBox">
+        <button type="button" class="btn-signup-pill" id="btnMobileSignUp" style="width: 100%;">Create Account</button>
+      </div>
+    </div>
+
+    <!-- Hero Content Grid -->
+    <div class="container hero-content-wrapper">
+      <!-- Left Hero Column: Typography & Actions -->
+      <div class="hero-text-col">
+        
+        <!-- Professional Main Heading: AL RAEES TRAVEL AGENCY -->
+        <h1 class="hero-main-title scroll-reveal-text">
+          AL RAEES<br>TRAVEL AGENCY
+        </h1>
+        
+        <p class="hero-subtitle scroll-reveal-text">
+          Premium Airline Ticket Booking, 5-Star Luxury Stays & Bespoke Global Journeys.
+        </p>
+
+        <!-- Landmark Thumbnails with Smooth Hover (35px Radius) -->
+        <div class="hero-thumbnails-row scroll-reveal-item">
+          <div class="hero-thumb-card" data-target="Paris, France" title="Explore Paris">
+            <img src="assets/images/thumb-paris.jpg" alt="Paris Eiffel Tower">
+          </div>
+          <div class="hero-thumb-card" data-target="Banff, Canada" title="Explore Banff">
+            <img src="assets/images/moraine-lake.jpg" alt="Banff Moraine Lake">
+          </div>
+          <div class="hero-thumb-card" data-target="Santorini, Greece" title="Explore Santorini">
+            <img src="assets/images/dest-santorini.jpg" alt="Santorini Caldera">
+          </div>
+        </div>
+
+        <!-- Social Proof Avatars & Rating -->
+        <div class="hero-social-proof scroll-reveal-item">
+          <div class="avatar-stack">
+            <img src="assets/images/avatars/arjun.jpg" alt="Verified Flyer" class="avatar-stack-item">
+            <img src="assets/images/avatars/sara.jpg" alt="Verified Flyer" class="avatar-stack-item">
+            <img src="assets/images/avatars/user-nikhil.jpg" alt="Verified Flyer" class="avatar-stack-item">
+          </div>
+          <div class="avatar-badge-count">
+            <span class="avatar-rating-stars">★★★★★</span>
+            <span>4.9 / 5.0 (2,400+ VIPs)</span>
+          </div>
+        </div>
+
+        <!-- CTA & Socials Row -->
+        <div class="hero-action-row scroll-reveal-item">
+          <a href="#bookingWidget" class="btn-book-now" id="btnHeroBook">
+            <span>Book Your Flight</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+
+          <div class="hero-social-links">
+            <a href="https://facebook.com" class="hero-social-icon" aria-label="Facebook">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.6 5H18V0h-3.8C10.5 0 9 1.5 9 4.667V8z"/></svg>
+            </a>
+            <a href="https://instagram.com" class="hero-social-icon" aria-label="Instagram">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://twitter.com" class="hero-social-icon" aria-label="X (Twitter)">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Hero Airplane Parallax Layer (Zooms In & Glides Right on Scroll - No Shadows) -->
+      <div class="hero-plane-col">
+        <div class="hero-plane-wrap" id="heroPlaneWrap">
+          <div class="hero-plane-inner plane-idle-anim">
+            <img src="assets/images/plane-hero.png" alt="Al Raees Flagship Aircraft" class="hero-plane-img" id="heroPlaneImg">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flight Booking Widget (50px Radius Card, 35px Inside) -->
+    <div class="container booking-widget-section" id="bookingWidget">
+      <div class="booking-card scroll-reveal-item">
+        
+        <!-- Top Tab Pills -->
+        <div class="booking-top-bar">
+          <div class="booking-tabs-group">
+            <button type="button" class="booking-tab-pill active" id="tabClass">
+              <span>💺</span> Economy ▼
+            </button>
+            <button type="button" class="booking-tab-pill" id="tabAdults">
+              <span>👤</span> 2 Adults ▼
+            </button>
+          </div>
+        </div>
+
+        <!-- Booking Fields Form Grid -->
+        <div class="booking-fields-grid">
+          
+          <!-- Field 1: Destination Autocomplete -->
+          <div class="booking-input-item" id="fieldDestination">
+            <label class="booking-input-label" for="inputDestination">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Destination
+            </label>
+            <input type="text" id="inputDestination" class="booking-input-value" placeholder="Where to? (e.g. Dubai, London)" value="Dubai, United Arab Emirates" autocomplete="off">
+            
+            <!-- Quick Destination Dropdown Menu -->
+            <div class="dest-dropdown-menu" id="destDropdown">
+              <div class="dest-dropdown-header">POPULAR LUXURY DESTINATIONS</div>
+              <div class="dest-dropdown-item" data-name="Dubai, United Arab Emirates" data-code="DXB">
+                <span class="dest-item-icon">🇦🇪</span>
+                <div class="dest-item-text">
+                  <span class="dest-city-title">Dubai, UAE</span>
+                  <span class="dest-airport-sub">Dubai International Airport (DXB)</span>
+                </div>
+                <span class="dest-item-badge">Direct</span>
+              </div>
+              <div class="dest-dropdown-item" data-name="London, United Kingdom" data-code="LHR">
+                <span class="dest-item-icon">🇬🇧</span>
+                <div class="dest-item-text">
+                  <span class="dest-city-title">London, UK</span>
+                  <span class="dest-airport-sub">Heathrow Airport (LHR)</span>
+                </div>
+                <span class="dest-item-badge">Daily</span>
+              </div>
+              <div class="dest-dropdown-item" data-name="Bangkok, Thailand" data-code="BKK">
+                <span class="dest-item-icon">🇹🇭</span>
+                <div class="dest-item-text">
+                  <span class="dest-city-title">Bangkok, Thailand</span>
+                  <span class="dest-airport-sub">Suvarnabhumi Airport (BKK)</span>
+                </div>
+                <span class="dest-item-badge">Top Deal</span>
+              </div>
+              <div class="dest-dropdown-item" data-name="Paris, France" data-code="CDG">
+                <span class="dest-item-icon">🇫🇷</span>
+                <div class="dest-item-text">
+                  <span class="dest-city-title">Paris, France</span>
+                  <span class="dest-airport-sub">Charles de Gaulle Airport (CDG)</span>
+                </div>
+                <span class="dest-item-badge">Romantic</span>
+              </div>
+              <div class="dest-dropdown-item" data-name="Tokyo, Japan" data-code="HND">
+                <span class="dest-item-icon">🇯🇵</span>
+                <div class="dest-item-text">
+                  <span class="dest-city-title">Tokyo, Japan</span>
+                  <span class="dest-airport-sub">Haneda Airport (HND)</span>
+                </div>
+                <span class="dest-item-badge">Express</span>
+              </div>
+              <div class="dest-dropdown-item" data-name="Santorini, Greece" data-code="JTR">
+                <span class="dest-item-icon">🇬🇷</span>
+                <div class="dest-item-text">
+                  <span class="dest-city-title">Santorini, Greece</span>
+                  <span class="dest-airport-sub">Thira Airport (JTR)</span>
+                </div>
+                <span class="dest-item-badge">VIP</span>
+              </div>
+              <div class="dest-dropdown-item" data-name="Banff, Canada" data-code="YYC">
+                <span class="dest-item-icon">🇨🇦</span>
+                <div class="dest-item-text">
+                  <span class="dest-city-title">Banff (Calgary), Canada</span>
+                  <span class="dest-airport-sub">Calgary Airport (YYC)</span>
+                </div>
+                <span class="dest-item-badge">Scenic</span>
+              </div>
+              <div class="dest-dropdown-item" data-name="Rome, Italy" data-code="FCO">
+                <span class="dest-item-icon">🇮🇹</span>
+                <div class="dest-item-text">
+                  <span class="dest-city-title">Rome, Italy</span>
+                  <span class="dest-airport-sub">Fiumicino Airport (FCO)</span>
+                </div>
+                <span class="dest-item-badge">Historic</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Field 2: Check In Date -->
+          <div class="booking-input-item" id="fieldCheckIn">
+            <label class="booking-input-label" for="inputCheckIn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              Check In
+            </label>
+            <input type="date" id="inputCheckIn" class="booking-input-value">
+          </div>
+
+          <!-- Field 3: Check Out Date -->
+          <div class="booking-input-item" id="fieldCheckOut">
+            <label class="booking-input-label" for="inputCheckOut">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              Check Out
+            </label>
+            <input type="date" id="inputCheckOut" class="booking-input-value">
+          </div>
+
+          <!-- Field 4: Guests & Class with Interactive Popover -->
+          <div class="booking-input-item" id="fieldGuests">
+            <label class="booking-input-label" for="inputGuests">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              Guests & Class
+            </label>
+            <input type="text" id="inputGuests" class="booking-input-value" value="2 Adults, 1 Room • Economy" readonly>
+
+            <!-- Interactive Guest Selector Popover -->
+            <div class="guest-popover-menu" id="guestPopover">
+              <div class="guest-popover-header">SELECT TRAVELERS & CABIN</div>
+              
+              <!-- Adults Counter -->
+              <div class="guest-popover-row">
+                <div class="guest-row-info">
+                  <span class="guest-row-title">Adults</span>
+                  <span class="guest-row-sub">Age 12+</span>
+                </div>
+                <div class="guest-counter-ctrls">
+                  <button type="button" class="btn-guest-counter" data-action="dec" data-target="adults">−</button>
+                  <span class="guest-count-val" id="countAdults">2</span>
+                  <button type="button" class="btn-guest-counter" data-action="inc" data-target="adults">+</button>
+                </div>
+              </div>
+
+              <!-- Children Counter -->
+              <div class="guest-popover-row">
+                <div class="guest-row-info">
+                  <span class="guest-row-title">Children</span>
+                  <span class="guest-row-sub">Age 2–11</span>
+                </div>
+                <div class="guest-counter-ctrls">
+                  <button type="button" class="btn-guest-counter" data-action="dec" data-target="children">−</button>
+                  <span class="guest-count-val" id="countChildren">0</span>
+                  <button type="button" class="btn-guest-counter" data-action="inc" data-target="children">+</button>
+                </div>
+              </div>
+
+              <!-- Infants Counter -->
+              <div class="guest-popover-row">
+                <div class="guest-row-info">
+                  <span class="guest-row-title">Infants</span>
+                  <span class="guest-row-sub">Under 2 yrs</span>
+                </div>
+                <div class="guest-counter-ctrls">
+                  <button type="button" class="btn-guest-counter" data-action="dec" data-target="infants">−</button>
+                  <span class="guest-count-val" id="countInfants">0</span>
+                  <button type="button" class="btn-guest-counter" data-action="inc" data-target="infants">+</button>
+                </div>
+              </div>
+
+              <!-- Rooms Counter -->
+              <div class="guest-popover-row">
+                <div class="guest-row-info">
+                  <span class="guest-row-title">Rooms</span>
+                  <span class="guest-row-sub">Hotel suites</span>
+                </div>
+                <div class="guest-counter-ctrls">
+                  <button type="button" class="btn-guest-counter" data-action="dec" data-target="rooms">−</button>
+                  <span class="guest-count-val" id="countRooms">1</span>
+                  <button type="button" class="btn-guest-counter" data-action="inc" data-target="rooms">+</button>
+                </div>
+              </div>
+
+              <!-- Cabin Class Pills -->
+              <div class="guest-popover-cabin">
+                <div class="cabin-pills-row">
+                  <button type="button" class="cabin-choice-pill active" data-class="Economy">Economy</button>
+                  <button type="button" class="cabin-choice-pill" data-class="Premium Economy">Prem Economy</button>
+                  <button type="button" class="cabin-choice-pill" data-class="Business">Business</button>
+                  <button type="button" class="cabin-choice-pill" data-class="First Class">First Class</button>
+                </div>
+              </div>
+
+              <button type="button" class="btn-apply-guests" id="btnApplyGuests">Confirm Travelers</button>
+            </div>
+          </div>
+
+          <!-- Action Search Button (35px radius) -->
+          <button type="button" class="btn-search-flights" id="btnSearchFlights">
+            <span>Search</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       HOTELS SECTION: 5-Star Luxury Stays Gallery Showcase (Gallery Style)
+       ========================================================================= -->
+  <section class="luxury-stays-section" id="luxuryStays">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title scroll-reveal-text">5-Star Luxury Hotels & Suites</h2>
+        <p class="section-subtitle scroll-reveal-text">Exclusive beachfront villas, private penthouse plunge pools & Michelin dining experiences</p>
+        
+        <!-- Gallery Filter Tabs -->
+        <div class="gallery-filter-tabs scroll-reveal-item">
+          <button type="button" class="gallery-tab-btn active" data-stay-filter="all">All Suites</button>
+          <button type="button" class="gallery-tab-btn" data-stay-filter="ocean">Oceanfront</button>
+          <button type="button" class="gallery-tab-btn" data-stay-filter="penthouse">Penthouses</button>
+          <button type="button" class="gallery-tab-btn" data-stay-filter="resort">Villas & Resorts</button>
+          <button type="button" class="gallery-tab-btn" data-stay-filter="dining">Michelin Dining</button>
+        </div>
+      </div>
+
+      <!-- Luxury Stays Gallery Grid (Replacing Slider) -->
+      <div class="luxury-gallery-grid scroll-reveal-item" id="luxuryGalleryGrid">
+        
+        <!-- Gallery Item 1: Oceanfront Presidential Suite -->
+        <div class="gallery-stay-card scroll-reveal-item" data-category="ocean" data-stay="Oceanfront Presidential Suite" data-price="$1,850" data-img="assets/images/suite-ocean-view.jpg">
+          <div class="gallery-stay-image-box">
+            <img src="assets/images/suite-ocean-view.jpg" alt="Presidential Ocean Suite" loading="lazy">
+            <span class="gallery-badge">Oceanfront Suite</span>
+          </div>
+          <div class="gallery-stay-info">
+            <div class="gallery-stay-header">
+              <h3 class="gallery-stay-title">Presidential Ocean Suite</h3>
+              <div class="gallery-stay-price">$1,850<small>/nt</small></div>
+            </div>
+            <p class="gallery-stay-desc">Panoramic sea terrace, king oak bed, personal 24/7 butler & private beach cabana.</p>
+            <div class="gallery-stay-perks">
+              <span>🌊 Ocean View</span>
+              <span>🍸 Private Butler</span>
+              <span>🏖️ VIP Beach</span>
+            </div>
+            <button type="button" class="btn-gallery-reserve">Reserve Suite</button>
+          </div>
+        </div>
+
+        <!-- Gallery Item 2: Skyline Penthouse & Plunge Pool -->
+        <div class="gallery-stay-card scroll-reveal-item" data-category="penthouse" data-stay="Skyline Penthouse & Plunge Pool" data-price="$2,400" data-img="assets/images/rooftop-pool-night.jpg">
+          <div class="gallery-stay-image-box">
+            <img src="assets/images/rooftop-pool-night.jpg" alt="Skyline Penthouse" loading="lazy">
+            <span class="gallery-badge">Skyline Penthouse</span>
+          </div>
+          <div class="gallery-stay-info">
+            <div class="gallery-stay-header">
+              <h3 class="gallery-stay-title">Skyline Penthouse & Pool</h3>
+              <div class="gallery-stay-price">$2,400<small>/nt</small></div>
+            </div>
+            <p class="gallery-stay-desc">Private heated rooftop plunge pool, illuminated night city views & vintage champagne service.</p>
+            <div class="gallery-stay-perks">
+              <span>🏊 Heated Pool</span>
+              <span>🌃 Skyline Views</span>
+              <span>🍾 Champagne</span>
+            </div>
+            <button type="button" class="btn-gallery-reserve">Reserve Suite</button>
+          </div>
+        </div>
+
+        <!-- Gallery Item 3: Laguna Luxury Resort & Villas -->
+        <div class="gallery-stay-card scroll-reveal-item" data-category="resort" data-stay="Laguna Luxury Resort & Villas" data-price="$1,420" data-img="assets/images/resort-lagoon-night.jpg">
+          <div class="gallery-stay-image-box">
+            <img src="assets/images/resort-lagoon-night.jpg" alt="Laguna Luxury Resort" loading="lazy">
+            <span class="gallery-badge">5-Star Lagoon</span>
+          </div>
+          <div class="gallery-stay-info">
+            <div class="gallery-stay-header">
+              <h3 class="gallery-stay-title">Laguna Luxury Villas</h3>
+              <div class="gallery-stay-price">$1,420<small>/nt</small></div>
+            </div>
+            <p class="gallery-stay-desc">Illuminated seaside pool villas, tropical gardens, overwater lounges & private yacht marina dock.</p>
+            <div class="gallery-stay-perks">
+              <span>🌴 Lagoon Pool</span>
+              <span>⛵ Yacht Dock</span>
+              <span>🌺 Spa Sanctuary</span>
+            </div>
+            <button type="button" class="btn-gallery-reserve">Reserve Villa</button>
+          </div>
+        </div>
+
+        <!-- Gallery Item 4: Executive Double Bed Suite -->
+        <div class="gallery-stay-card scroll-reveal-item" data-category="ocean" data-stay="Executive Double Bed Suite" data-price="$1,100" data-img="assets/images/suite-double-beds.jpg">
+          <div class="gallery-stay-image-box">
+            <img src="assets/images/suite-double-beds.jpg" alt="Executive Twin Bed Suite" loading="lazy">
+            <span class="gallery-badge">Executive Suite</span>
+          </div>
+          <div class="gallery-stay-info">
+            <div class="gallery-stay-header">
+              <h3 class="gallery-stay-title">Executive Twin Suite</h3>
+              <div class="gallery-stay-price">$1,100<small>/nt</small></div>
+            </div>
+            <p class="gallery-stay-desc">Dual luxury plush queen beds, deep navy velvet finishes, marble ensuite bath & club lounge.</p>
+            <div class="gallery-stay-perks">
+              <span>🛏️ 2 Queen Beds</span>
+              <span>🛁 Marble Bath</span>
+              <span>☕ Club Lounge</span>
+            </div>
+            <button type="button" class="btn-gallery-reserve">Reserve Suite</button>
+          </div>
+        </div>
+
+        <!-- Gallery Item 5: Grand Fine Dining & VIP Lounge -->
+        <div class="gallery-stay-card scroll-reveal-item" data-category="dining" data-stay="Grand Michelin Dining & VIP Lounge" data-price="$450" data-img="assets/images/luxury-dining-lounge.jpg">
+          <div class="gallery-stay-image-box">
+            <img src="assets/images/luxury-dining-lounge.jpg" alt="Grand Dining Lounge" loading="lazy">
+            <span class="gallery-badge">Michelin Dining</span>
+          </div>
+          <div class="gallery-stay-info">
+            <div class="gallery-stay-header">
+              <h3 class="gallery-stay-title">Grand Dining & Lounge</h3>
+              <div class="gallery-stay-price">$450<small>/set</small></div>
+            </div>
+            <p class="gallery-stay-desc">Michelin-star multi-course tasting menu, crystal chandeliers, sommelier wine pairing & private salon.</p>
+            <div class="gallery-stay-perks">
+              <span>⭐ Michelin Star</span>
+              <span>🍷 Sommelier</span>
+              <span>🕯️ VIP Salon</span>
+            </div>
+            <button type="button" class="btn-gallery-reserve">Reserve Table</button>
+          </div>
+        </div>
+
+        <!-- Gallery Item 6: Royal Aegean Caldera Suite -->
+        <div class="gallery-stay-card scroll-reveal-item" data-category="penthouse" data-stay="Royal Aegean Caldera Suite" data-price="$1,980" data-img="assets/images/dest-santorini.jpg">
+          <div class="gallery-stay-image-box">
+            <img src="assets/images/dest-santorini.jpg" alt="Santorini Caldera Suite" loading="lazy">
+            <span class="gallery-badge">Caldera Cliffside</span>
+          </div>
+          <div class="gallery-stay-info">
+            <div class="gallery-stay-header">
+              <h3 class="gallery-stay-title">Aegean Caldera Cliffside</h3>
+              <div class="gallery-stay-price">$1,980<small>/nt</small></div>
+            </div>
+            <p class="gallery-stay-desc">Cliffside cave villa with infinity hydro-jet tub, sunset Aegean panorama & private sommelier.</p>
+            <div class="gallery-stay-perks">
+              <span>🌅 Sunset View</span>
+              <span>♨️ Hydro Pool</span>
+              <span>🍇 Wine Tasting</span>
+            </div>
+            <button type="button" class="btn-gallery-reserve">Reserve Suite</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       PACKAGES SECTION: Exclusive Vacation Deals (50px Card Radius, 35px Buttons)
+       ========================================================================= -->
+  <section class="deals-section" id="exclusiveDeals">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title scroll-reveal-text">Exclusive Vacation Packages</h2>
+        <p class="section-subtitle scroll-reveal-text">All-inclusive luxury flights, 5-star ocean suites, and private excursions</p>
+      </div>
+
+      <div class="deals-grid">
+        
+        <!-- Deal 1: Dubai Luxury -->
+        <article class="deal-card scroll-reveal-item">
+          <div class="deal-image-wrap">
+            <img src="assets/images/deal-dubai.jpg" alt="Dubai Luxury Vacation">
+            <span class="deal-badge">Top Seller</span>
+          </div>
+          <div class="deal-content">
+            <h3 class="deal-destination-title">Dubai</h3>
+            
+            <div class="deal-options-list">
+              <div class="deal-option-item selected">
+                <div class="deal-option-left">
+                  <input type="radio" name="dealDubai" class="deal-option-radio" checked>
+                  <div class="deal-option-details">
+                    <span class="deal-tier-name">Burj Escape Tier</span>
+                    <span class="deal-tier-days">4 Days / 3 Nights</span>
+                  </div>
+                </div>
+                <div class="deal-tier-price">$1,250</div>
+              </div>
+
+              <div class="deal-option-item">
+                <div class="deal-option-left">
+                  <input type="radio" name="dealDubai" class="deal-option-radio">
+                  <div class="deal-option-details">
+                    <span class="deal-tier-name">Royal Palm Elite</span>
+                    <span class="deal-tier-days">7 Days / 6 Nights</span>
+                  </div>
+                </div>
+                <div class="deal-tier-price">$2,190</div>
+              </div>
+            </div>
+
+            <button type="button" class="btn-deal-learn">LEARN MORE</button>
+          </div>
+        </article>
+
+        <!-- Deal 2: London Heritage -->
+        <article class="deal-card scroll-reveal-item">
+          <div class="deal-image-wrap">
+            <img src="assets/images/deal-london.jpg" alt="London Grand Experience">
+            <span class="deal-badge">Heritage</span>
+          </div>
+          <div class="deal-content">
+            <h3 class="deal-destination-title">London</h3>
+            
+            <div class="deal-options-list">
+              <div class="deal-option-item selected">
+                <div class="deal-option-left">
+                  <input type="radio" name="dealLondon" class="deal-option-radio" checked>
+                  <div class="deal-option-details">
+                    <span class="deal-tier-name">Mayfair Classic</span>
+                    <span class="deal-tier-days">5 Days / 4 Nights</span>
+                  </div>
+                </div>
+                <div class="deal-tier-price">$1,480</div>
+              </div>
+
+              <div class="deal-option-item">
+                <div class="deal-option-left">
+                  <input type="radio" name="dealLondon" class="deal-option-radio">
+                  <div class="deal-option-details">
+                    <span class="deal-tier-name">Westminster Grand</span>
+                    <span class="deal-tier-days">8 Days / 7 Nights</span>
+                  </div>
+                </div>
+                <div class="deal-tier-price">$2,650</div>
+              </div>
+            </div>
+
+            <button type="button" class="btn-deal-learn">LEARN MORE</button>
+          </div>
+        </article>
+
+        <!-- Deal 3: Thailand Paradise -->
+        <article class="deal-card scroll-reveal-item">
+          <div class="deal-image-wrap">
+            <img src="assets/images/deal-thailand.jpg" alt="Thailand Tropical Haven">
+            <span class="deal-badge">Tropical</span>
+          </div>
+          <div class="deal-content">
+            <h3 class="deal-destination-title">Thailand</h3>
+            
+            <div class="deal-options-list">
+              <div class="deal-option-item selected">
+                <div class="deal-option-left">
+                  <input type="radio" name="dealThailand" class="deal-option-radio" checked>
+                  <div class="deal-option-details">
+                    <span class="deal-tier-name">Phuket Beachfront</span>
+                    <span class="deal-tier-days">6 Days / 5 Nights</span>
+                  </div>
+                </div>
+                <div class="deal-tier-price">$980</div>
+              </div>
+
+              <div class="deal-option-item">
+                <div class="deal-option-left">
+                  <input type="radio" name="dealThailand" class="deal-option-radio">
+                  <div class="deal-option-details">
+                    <span class="deal-tier-name">Samui Luxury Villa</span>
+                    <span class="deal-tier-days">9 Days / 8 Nights</span>
+                  </div>
+                </div>
+                <div class="deal-tier-price">$1,790</div>
+              </div>
+            </div>
+
+            <button type="button" class="btn-deal-learn">LEARN MORE</button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       DESTINATIONS SECTION: Popular World Destinations Gallery Showcase (Gallery Style)
+       ========================================================================= -->
+  <section class="popular-section" id="popularDestinations">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title scroll-reveal-text">Popular World Destinations & Places</h2>
+        <p class="section-subtitle scroll-reveal-text">Explore hand-picked global wonders with direct premium airline connections</p>
+        
+        <!-- Gallery Filter Tabs -->
+        <div class="gallery-filter-tabs scroll-reveal-item">
+          <button type="button" class="gallery-tab-btn active" data-dest-filter="all">All World Places</button>
+          <button type="button" class="gallery-tab-btn" data-dest-filter="europe">Europe</button>
+          <button type="button" class="gallery-tab-btn" data-dest-filter="asia">Asia</button>
+          <button type="button" class="gallery-tab-btn" data-dest-filter="middle-east">Middle East</button>
+          <button type="button" class="gallery-tab-btn" data-dest-filter="americas">Americas</button>
+        </div>
+      </div>
+
+      <!-- Destinations Gallery Grid (Replacing Slider) -->
+      <div class="destinations-gallery-grid scroll-reveal-item" id="destGalleryGrid">
+        
+        <!-- Dest 1: Santorini -->
+        <div class="gallery-dest-card scroll-reveal-item" data-region="europe" data-destination="Santorini, Greece">
+          <img src="assets/images/dest-santorini.jpg" alt="Santorini, Greece" loading="lazy">
+          <span class="gallery-dest-badge">🇬🇷 Greece • VIP Choice</span>
+          <div class="gallery-dest-overlay">
+            <h3 class="gallery-dest-title">Santorini</h3>
+            <span class="gallery-dest-country">Aegean Cliffside & Caldera</span>
+          </div>
+        </div>
+
+        <!-- Dest 2: Banff -->
+        <div class="gallery-dest-card scroll-reveal-item" data-region="americas" data-destination="Banff, Canada">
+          <img src="assets/images/moraine-lake.jpg" alt="Banff Moraine Lake, Canada" loading="lazy">
+          <span class="gallery-dest-badge">🇨🇦 Canada • Alpine Haven</span>
+          <div class="gallery-dest-overlay">
+            <h3 class="gallery-dest-title">Banff & Moraine Lake</h3>
+            <span class="gallery-dest-country">Rocky Mountain Glaciers</span>
+          </div>
+        </div>
+
+        <!-- Dest 3: Kyoto -->
+        <div class="gallery-dest-card scroll-reveal-item" data-region="asia" data-destination="Kyoto, Japan">
+          <img src="assets/images/dest-kyoto.jpg" alt="Kyoto Shrine, Japan" loading="lazy">
+          <span class="gallery-dest-badge">🇯🇵 Japan • Imperial Heritage</span>
+          <div class="gallery-dest-overlay">
+            <h3 class="gallery-dest-title">Kyoto</h3>
+            <span class="gallery-dest-country">Historic Shrines & Bamboo Groves</span>
+          </div>
+        </div>
+
+        <!-- Dest 4: Taj Mahal -->
+        <div class="gallery-dest-card scroll-reveal-item" data-region="asia" data-destination="Agra, India">
+          <img src="assets/images/dest-tajmahal.jpg" alt="Taj Mahal, Agra, India" loading="lazy">
+          <span class="gallery-dest-badge">🇮🇳 India • World Wonder</span>
+          <div class="gallery-dest-overlay">
+            <h3 class="gallery-dest-title">Taj Mahal</h3>
+            <span class="gallery-dest-country">Agra Architectural Heritage</span>
+          </div>
+        </div>
+
+        <!-- Dest 5: Colosseum -->
+        <div class="gallery-dest-card scroll-reveal-item" data-region="europe" data-destination="Rome, Italy">
+          <img src="assets/images/colosseum.jpg" alt="Rome Colosseum, Italy" loading="lazy">
+          <span class="gallery-dest-badge">🇮🇹 Italy • Eternal City</span>
+          <div class="gallery-dest-overlay">
+            <h3 class="gallery-dest-title">Rome Colosseum</h3>
+            <span class="gallery-dest-country">Ancient Roman Wonders</span>
+          </div>
+        </div>
+
+        <!-- Dest 6: Dubai Marina -->
+        <div class="gallery-dest-card scroll-reveal-item" data-region="middle-east" data-destination="Dubai, UAE">
+          <img src="assets/images/deal-dubai.jpg" alt="Dubai Marina Skyline, UAE" loading="lazy">
+          <span class="gallery-dest-badge">🇦🇪 UAE • Arabian Luxury</span>
+          <div class="gallery-dest-overlay">
+            <h3 class="gallery-dest-title">Dubai Marina</h3>
+            <span class="gallery-dest-country">World-Class Skylines & Dunes</span>
+          </div>
+        </div>
+
+        <!-- Dest 7: London Big Ben -->
+        <div class="gallery-dest-card scroll-reveal-item" data-region="europe" data-destination="London, UK">
+          <img src="assets/images/deal-london.jpg" alt="London Big Ben, UK" loading="lazy">
+          <span class="gallery-dest-badge">🇬🇧 UK • Royal Landmark</span>
+          <div class="gallery-dest-overlay">
+            <h3 class="gallery-dest-title">London City</h3>
+            <span class="gallery-dest-country">British Royalty & History</span>
+          </div>
+        </div>
+
+        <!-- Dest 8: Phuket Beach -->
+        <div class="gallery-dest-card scroll-reveal-item" data-region="asia" data-destination="Phuket, Thailand">
+          <img src="assets/images/deal-thailand.jpg" alt="Phuket Beach, Thailand" loading="lazy">
+          <span class="gallery-dest-badge">🇹🇭 Thailand • Island Escape</span>
+          <div class="gallery-dest-overlay">
+            <h3 class="gallery-dest-title">Phuket Island</h3>
+            <span class="gallery-dest-country">Turquoise Waters & Coral Bays</span>
+          </div>
+        </div>
+
+        <!-- Dest 9: Manhattan Skyline -->
+        <div class="gallery-dest-card scroll-reveal-item" data-region="americas" data-destination="New York, USA">
+          <img src="assets/images/skyline.jpg" alt="New York Skyline, USA" loading="lazy">
+          <span class="gallery-dest-badge">🇺🇸 USA • Empire State</span>
+          <div class="gallery-dest-overlay">
+            <h3 class="gallery-dest-title">New York Manhattan</h3>
+            <span class="gallery-dest-country">Iconic Metropolises</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       ABOUT SECTION: About Us with Organic Curved Frame (50px Radius)
+       ========================================================================= -->
+  <section class="about-section" id="aboutUs">
+    <div class="container">
+      <div class="about-grid">
+        
+        <!-- Left: Text & Counter Statistics -->
+        <div class="about-text-col scroll-reveal-left">
+          <h2 class="about-title scroll-reveal-text">About Al Raees Travel Agency</h2>
+          <p class="about-paragraph scroll-reveal-text">
+            Al Raees Travel Agency is a prestigious international travel and aviation management agency. We specialize in seamless first-class flight bookings, private jet charters, luxury hotel suites, and tailor-made worldwide itineraries. With our global network of five-star partners and dedicated 24/7 VIP concierges, every journey is effortless, prestigious, and unforgettable.
+          </p>
+          
+          <div class="about-stats-grid scroll-reveal-item">
+            <div class="stat-item">
+              <span class="stat-number" data-count="120" data-suffix="+">0</span>
+              <span class="stat-label">Aircrafts & Jets</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="85" data-suffix="+">0</span>
+              <span class="stat-label">Destinations</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="100" data-suffix="%">0</span>
+              <span class="stat-label">Satisfaction</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="25" data-suffix="K+">0</span>
+              <span class="stat-label">VIP Travelers</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Asymmetric Curved Frame & Floating Badge (50px Corner Radius) -->
+        <div class="about-image-col scroll-reveal-right">
+          <div class="about-custom-frame">
+            <img src="assets/images/about-plane.jpg" alt="Al Raees Private Jet">
+          </div>
+          <div class="about-floating-badge">
+            <span style="font-size: 1.2rem;">✨</span>
+            <span>24/7 Al Raees Concierge</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       REVIEWS SECTION: Client Testimonials (50px Card Radius)
+       ========================================================================= -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title scroll-reveal-text">Client Reviews & Testimonials</h2>
+        <p class="section-subtitle scroll-reveal-text">Trusted by thousands of executive travelers, families, and global adventurers</p>
+      </div>
+
+      <div class="testimonials-grid">
+        
+        <!-- Review 1: Arjun Patel -->
+        <div class="testimonial-card scroll-reveal-item">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote class="testimonial-quote">
+            "Al Raees Travel Agency arranged our private Dubai family stay with absolute perfection. The flight ticketing was instant and our beachfront villa was spectacular."
+          </blockquote>
+          <div class="testimonial-author-row">
+            <img src="assets/images/avatars/arjun.jpg" alt="Arjun Patel" class="testimonial-avatar">
+            <div class="testimonial-author-info">
+              <span class="author-name">Arjun Patel</span>
+              <span class="author-role">Executive Director, TechVenture</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2: Sara Al-Mansoor -->
+        <div class="testimonial-card scroll-reveal-item">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote class="testimonial-quote">
+            "The finest agency for international airline tickets and luxury stays. The real-time seat selector and immediate official boarding pass made booking a pleasure."
+          </blockquote>
+          <div class="testimonial-author-row">
+            <img src="assets/images/avatars/sara.jpg" alt="Sara Al-Mansoor" class="testimonial-avatar">
+            <div class="testimonial-author-info">
+              <span class="author-name">Sara Al-Mansoor</span>
+              <span class="author-role">Luxury Lifestyle Curator</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3: Nikhil Sharma -->
+        <div class="testimonial-card scroll-reveal-item">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote class="testimonial-quote">
+            "Outstanding rates on premium business class tickets and penthouse suites. Whenever I travel abroad, Al Raees Travel Agency is my first and only choice."
+          </blockquote>
+          <div class="testimonial-author-row">
+            <img src="assets/images/avatars/user-nikhil.jpg" alt="Nikhil Sharma" class="testimonial-avatar">
+            <div class="testimonial-author-info">
+              <span class="author-name">Nikhil Sharma</span>
+              <span class="author-role">Global Strategy Consultant</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       CONTACTS & FOOTER SECTION: Strict 6-Page Navigation & Giant Watermark
+       ========================================================================= -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="container">
+      <div class="footer-card scroll-reveal-item">
+        
+        <!-- Brand Column -->
+        <div class="footer-brand-col">
+          <div class="footer-brand-top">
+            <div class="brand-logo">
+              <div class="brand-icon">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                  <rect width="32" height="32" rx="8" fill="#0f172a"/>
+                  <path d="M16 4L26 10L26 22L16 28L6 22L6 10L16 4Z" stroke="#38bdf8" stroke-width="1.8"/>
+                  <path d="M16 9L21 12.5V19.5L16 23L11 19.5V12.5L16 9Z" fill="#0284c7"/>
+                </svg>
+              </div>
+              <div class="brand-text">
+                <span class="brand-title">AL RAEES</span>
+                <span class="brand-sub">TRAVEL AGENCY</span>
+              </div>
+            </div>
+            <p class="footer-tagline">
+              Book smarter, travel further. Your ultimate luxury gateway to bespoke airline ticketing, 5-star hotel suites, and world-class vacations.
+            </p>
+          </div>
+
+          <div class="footer-social-box">
+            <span class="footer-social-title">Follow Us:</span>
+            <a href="https://facebook.com" class="footer-social-icon" aria-label="Facebook">
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.6 5H18V0h-3.8C10.5 0 9 1.5 9 4.667V8z"/></svg>
+            </a>
+            <a href="https://instagram.com" class="footer-social-icon" aria-label="Instagram">
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://twitter.com" class="footer-social-icon" aria-label="X (Twitter)">
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Col 1: Pages (Strict 6-Page Hierarchy) -->
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Pages</h4>
+          <ul class="footer-link-list">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#luxuryStays">Hotels</a></li>
+            <li><a href="#exclusiveDeals">Packages</a></li>
+            <li><a href="#aboutUs">About</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#siteFooter">Contacts</a></li>
+          </ul>
+        </div>
+
+        <!-- Navigation Col 2: Top Destinations -->
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Top Destinations</h4>
+          <ul class="footer-link-list">
+            <li><a href="#bookingWidget" data-region="Dubai">Dubai, UAE</a></li>
+            <li><a href="#bookingWidget" data-region="London">London, UK</a></li>
+            <li><a href="#bookingWidget" data-region="Thailand">Bangkok & Phuket</a></li>
+            <li><a href="#bookingWidget" data-region="Greece">Santorini, Greece</a></li>
+            <li><a href="#bookingWidget" data-region="Japan">Tokyo & Kyoto</a></li>
+          </ul>
+        </div>
+
+        <!-- Navigation Col 3: VIP Contacts & Head Office -->
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Head Office & Contacts</h4>
+          <ul class="footer-link-list">
+            <li><a href="tel:0939522808">📞 0939-522808</a></li>
+            <li><a href="tel:03349654217">📱 03349654217</a></li>
+            <li><a href="tel:03449654217">📱 0344-9654217</a></li>
+            <li><a href="mailto:alraeestravels500@gmail.com">✉️ alraeestravels500@gmail.com</a></li>
+            <li><a href="#siteFooter" style="line-height: 1.4;">🏢 <strong>HEAD OFFICE:</strong> Office No. 1, Jawakhil Chowk, Pir Baba, Buner.</a></li>
+            <li><a href="#" id="linkTerms">Terms & Privacy</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Giant Stroked Watermark Typography: AL RAEES TRAVEL AGENCY -->
+      <div class="footer-watermark-row scroll-reveal-item">
+        <span class="footer-watermark-text" id="footerWatermark">AL RAEES TRAVEL AGENCY</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript Modules -->
+  <script src="js/parallax.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
