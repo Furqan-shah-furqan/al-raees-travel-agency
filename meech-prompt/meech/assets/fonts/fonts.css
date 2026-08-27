@@ -1,0 +1,39 @@
+/* Localized Adobe Typekit font: articulat-cf. Self-hosted for offline use. */
+
+@font-face{
+  font-family:"articulat-cf";
+  src:url("articulat-cf-n4.woff2") format("woff2");
+  font-display:swap;font-style:normal;font-weight:400;font-stretch:normal;
+}
+
+@font-face{
+  font-family:"articulat-cf";
+  src:url("articulat-cf-n5.woff2") format("woff2");
+  font-display:swap;font-style:normal;font-weight:500;font-stretch:normal;
+}
+
+@font-face{
+  font-family:"articulat-cf";
+  src:url("articulat-cf-n8.woff2") format("woff2");
+  font-display:swap;font-style:normal;font-weight:800;font-stretch:normal;
+}
+
+@font-face{
+  font-family:"articulat-cf";
+  src:url("articulat-cf-i8.woff2") format("woff2");
+  font-display:swap;font-style:italic;font-weight:800;font-stretch:normal;
+}
+
+@font-face{
+  font-family:"articulat-cf";
+  src:url("articulat-cf-i4.woff2") format("woff2");
+  font-display:swap;font-style:italic;font-weight:400;font-stretch:normal;
+}
+
+@font-face{
+  font-family:"articulat-cf";
+  src:url("articulat-cf-i5.woff2") format("woff2");
+  font-display:swap;font-style:italic;font-weight:500;font-stretch:normal;
+}
+
+.tk-articulat-cf{font-family:"articulat-cf",sans-serif;}
